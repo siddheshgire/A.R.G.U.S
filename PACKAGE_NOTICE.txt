@@ -1,0 +1,31 @@
+================================================================================
+A.R.G.U.S. — Portable Project Archive (Compact < 50 MB Edition)
+================================================================================
+
+This archive contains the complete codebase, documentation, tests, frontend,
+backend, and core machine learning models for the A.R.G.U.S. project.
+
+To comply with the < 50 MB submission and sharing limit, the following
+multi-gigabyte training files and heavy tree ensembles were excluded:
+  1. data/raw/paysim.csv (470 MB)
+  2. data/processed/train.csv (410 MB)
+  3. models/isolation_forest.joblib (455 MB)
+
+INCLUDED IN THIS ARCHIVE:
+  [x] Complete FastAPI Backend (backend/)
+  [x] Complete React 19 + Vite Frontend SPA (frontend/)
+  [x] Complete Database Schema & Models (database/)
+  [x] Pretrained XGBoost Model (models/xgboost_fraud_model.json)
+  [x] Pretrained Deep Autoencoder PyTorch Model (models/autoencoder.pt)
+  [x] Pretrained Logistic Regression Baseline (models/logistic_baseline.joblib)
+  [x] Feature Scaler & Model Metadata (models/feature_scaler.joblib, *_meta.json)
+  [x] Multi-Model Risk Engine (ml_engine/)
+  [x] IoT Edge Terminal Firmware & Simulator (iot/, iot_firmware/)
+  [x] Complete 78-Test Verification Suite (tests/)
+  [x] Validation & Test Datasets (data/processed/validation.csv, test.csv)
+  [x] All Documentation & Technical Reports (docs/)
+
+HOW TO REGENERATE THE EXCLUDED ISOLATION FOREST MODEL:
+  Run the existing training script:
+    python scripts/train_isolation_forest.py
+================================================================================

@@ -33,12 +33,13 @@ class DatabaseConfig:
         """
         db_url = os.getenv("DATABASE_URL")
         if not db_url:
-            user = os.getenv("DB_USER", "argus_user")
-            password = os.getenv("DB_PASSWORD", "change_this_password")
-            host = os.getenv("DB_HOST", "localhost")
-            port = os.getenv("DB_PORT", "5432")
-            name = os.getenv("DB_NAME", "argus_db")
-            db_url = f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{name}"
+            # Keep the checked-in demo runnable without requiring a local PostgreSQL
+            # server. Deployments should always provide DATABASE_URL explicitly.
+            sqlite_path = os.getenv("SQLITE_PATH", "argus.db")
+            if not os.path.isabs(sqlite_path):
+                project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+                sqlite_path = os.path.join(project_root, sqlite_path)
+            db_url = f"sqlite:///{sqlite_path}"
 
         pool_size = int(os.getenv("DB_POOL_SIZE", "10"))
         max_overflow = int(os.getenv("DB_MAX_OVERFLOW", "20"))

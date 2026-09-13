@@ -16,7 +16,7 @@ export function LoginPage() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const from = location.state?.from?.pathname || (role === 'USER' ? '/simulator' : '/dashboard');
+  const from = location.state?.from?.pathname || '/dashboard';
 
   const handleSubmit = async (e) => {
     e.preventDefault();

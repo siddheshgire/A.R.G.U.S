@@ -85,44 +85,20 @@ export function Sidebar() {
       </button>
       {open && <button className="mobile-nav-backdrop" onClick={() => setOpen(false)} aria-label="Close navigation" />}
       <aside className={`app-sidebar${open ? ' is-open' : ''}`}>
-      <nav style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+      <nav className="sidebar-nav" aria-label="Primary navigation">
         {navItems.map((group) => {
           const visibleItems = group.items.filter((item) => item.roles.includes(role));
           if (visibleItems.length === 0) return null;
 
           return (
-            <div key={group.label} style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-              <span
-                style={{
-                  fontSize: '0.7rem',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.06em',
-                  color: 'var(--text-muted)',
-                  paddingLeft: '0.75rem',
-                  marginBottom: '0.2rem',
-                }}
-              >
-                {group.label}
-              </span>
+            <div className="sidebar-group" key={group.label}>
+              <span className="sidebar-group-label">{group.label}</span>
               {visibleItems.map((item) => (
                 <NavLink
                   key={item.path}
                   to={item.path}
                   onClick={() => setOpen(false)}
-                  style={({ isActive }) => ({
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.75rem',
-                    padding: '0.6rem 0.85rem',
-                    borderRadius: 'var(--radius-md)',
-                    fontSize: '0.88rem',
-                    fontWeight: 500,
-                    color: isActive ? '#FFFFFF' : 'var(--text-secondary)',
-                    background: isActive ? 'var(--color-primary)' : 'transparent',
-                    boxShadow: isActive ? '0 0 12px var(--color-primary-glow)' : 'none',
-                    transition: 'all var(--transition-fast)',
-                  })}
+                  className={({ isActive }) => `sidebar-link${isActive ? ' is-active' : ''}`}
                 >
                   {item.icon}
                   <span>{item.name}</span>

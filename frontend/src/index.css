@@ -302,18 +302,24 @@ select.input-field {
   }
 }
 
-.app-shell { min-height: 100vh; display: flex; flex-direction: column; }
-.app-body { display: flex; flex: 1; min-height: 0; overflow: hidden; }
-.app-main { flex: 1; min-width: 0; background: var(--bg-app); overflow-y: auto; padding: 2rem; min-height: calc(100vh - 64px); }
-.app-content { max-width: 1280px; margin: 0 auto; }
-.app-sidebar { width: 240px; background: var(--bg-sidebar); border-right: 1px solid var(--border-subtle); display: flex; flex-direction: column; padding: 1.25rem 0.75rem; flex-shrink: 0; }
+.app-shell { min-height: 100vh; display: flex; flex-direction: column; background: var(--bg-app); }
+.app-body { display: flex; flex: 1; min-height: 0; }
+.app-main { flex: 1; min-width: 0; background: radial-gradient(circle at top right, rgba(30, 64, 175, 0.12), transparent 34%), var(--bg-app); overflow-y: auto; padding: clamp(1.25rem, 3vw, 2.5rem); min-height: calc(100vh - 64px); }
+.app-content { width: 100%; max-width: 1360px; margin: 0 auto; }
+.app-sidebar { width: 248px; background: linear-gradient(180deg, #0e1728 0%, var(--bg-sidebar) 100%); border-right: 1px solid var(--border-subtle); display: flex; flex-direction: column; padding: 1.5rem 1rem; flex-shrink: 0; }
+.sidebar-nav { display: flex; flex-direction: column; gap: 1.5rem; }
+.sidebar-group { display: flex; flex-direction: column; gap: 0.35rem; }
+.sidebar-group-label { padding: 0 0.75rem 0.35rem; color: var(--text-muted); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.sidebar-link { display: flex; align-items: center; gap: 0.75rem; padding: 0.7rem 0.8rem; border: 1px solid transparent; border-radius: var(--radius-md); color: var(--text-secondary); font-size: 0.86rem; font-weight: 500; transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast); }
+.sidebar-link:hover { background: rgba(59, 130, 246, 0.08); color: var(--text-primary); }
+.sidebar-link.is-active { background: linear-gradient(90deg, rgba(59, 130, 246, 0.24), rgba(59, 130, 246, 0.08)); border-color: rgba(96, 165, 250, 0.25); color: var(--text-primary); box-shadow: inset 3px 0 0 var(--color-primary); }
 .mobile-nav-toggle, .mobile-nav-backdrop { display: none; }
 
 @media (max-width: 768px) {
   .app-main { padding: 1rem; min-height: calc(100vh - 64px); }
-  .app-sidebar { position: fixed; inset: 64px auto 0 0; z-index: 50; width: min(280px, 86vw); transform: translateX(-105%); transition: transform var(--transition-normal); box-shadow: var(--shadow-lg); }
+  .app-sidebar { position: fixed; inset: 64px auto 0 0; z-index: 50; width: min(290px, 86vw); transform: translateX(-105%); transition: transform var(--transition-normal); box-shadow: var(--shadow-lg); }
   .app-sidebar.is-open { transform: translateX(0); }
-  .mobile-nav-toggle { display: inline-flex; position: fixed; left: 0.75rem; top: 0.85rem; z-index: 60; align-items: center; justify-content: center; size: 36px; width: 36px; height: 36px; border: 1px solid var(--border-medium); border-radius: var(--radius-md); background: var(--bg-card); color: var(--text-primary); }
+  .mobile-nav-toggle { display: inline-flex; position: fixed; left: 0.75rem; top: 0.85rem; z-index: 60; align-items: center; justify-content: center; width: 36px; height: 36px; border: 1px solid var(--border-medium); border-radius: var(--radius-md); background: var(--bg-card); color: var(--text-primary); }
   .mobile-nav-backdrop { display: block; position: fixed; inset: 64px 0 0; z-index: 40; background: rgba(0, 0, 0, 0.55); border: 0; }
 }
 
@@ -324,6 +330,14 @@ select.input-field {
   header > div:last-child { gap: 0.5rem !important; }
   header > div:last-child > div:first-child { display: none; }
 }
+
+/* Portal controls */
+.app-main button { font: inherit; }
+.app-main button:not(:disabled) { cursor: pointer; }
+.app-main button:focus-visible, .sidebar-link:focus-visible, .mobile-nav-toggle:focus-visible { outline: 2px solid var(--color-cyan); outline-offset: 2px; }
+.app-main > .app-content > div:first-child > div:first-child button { border: 1px solid var(--border-medium); border-radius: var(--radius-md); background: var(--bg-card); color: var(--text-secondary); padding: 0.45rem 0.7rem; transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast); }
+.app-main > .app-content > div:first-child > div:first-child button:hover { background: var(--bg-card-hover); color: var(--text-primary); }
+.app-main > .app-content > div:first-child > div:first-child button[title="Refresh now"] { display: inline-flex; align-items: center; justify-content: center; padding: 0.45rem; }
 
 /* Banner Alerts */
 .alert-banner {

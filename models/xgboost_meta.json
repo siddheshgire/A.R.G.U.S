@@ -1,0 +1,63 @@
+{
+  "model_name": "XGBoost Supervised Fraud Classifier",
+  "training_samples": 2653729,
+  "fraud_samples": 5781,
+  "features": [
+    "amount",
+    "oldbalanceOrg",
+    "newbalanceOrig",
+    "oldbalanceDest",
+    "newbalanceDest",
+    "log_amount",
+    "is_transfer",
+    "is_cash_out",
+    "hour_of_day",
+    "hour_sin",
+    "hour_cos",
+    "is_night_transaction",
+    "orig_balance_error",
+    "orig_drain_ratio",
+    "is_full_liquidation",
+    "dest_balance_error",
+    "dest_drain_ratio",
+    "dest_zero_balance_anomaly"
+  ],
+  "scale_pos_weight": 458.04,
+  "training_time_seconds": 13.37,
+  "chosen_threshold": 0.9425,
+  "validation_metrics": {
+    "pr_auc": 0.9996822033898307,
+    "roc_auc": 0.9999922601617627,
+    "threshold": 0.9424720406532288,
+    "precision": 1.0,
+    "recall": 0.9991525423728813,
+    "f1": 0.9995760915642221,
+    "fpr": 0.0,
+    "true_positives": 1179,
+    "false_positives": 0,
+    "true_negatives": 77521,
+    "false_negatives": 1,
+    "total_samples": 78701,
+    "total_fraud": 1180
+  },
+  "test_metrics": {
+    "pr_auc": 1.0,
+    "roc_auc": 1.0,
+    "threshold": 0.9424720406532288,
+    "precision": 1.0,
+    "recall": 0.9992012779552716,
+    "f1": 0.9996004794246903,
+    "fpr": 0.0,
+    "true_positives": 1251,
+    "false_positives": 0,
+    "true_negatives": 36727,
+    "false_negatives": 1,
+    "total_samples": 37979,
+    "total_fraud": 1252
+  },
+  "latency": {
+    "batch_size": 1000,
+    "batch_latency_ms": 3.273,
+    "single_sample_latency_ms": 3.192
+  }
+}

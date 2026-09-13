@@ -1,0 +1,62 @@
+{
+  "model_name": "Logistic Regression Baseline",
+  "training_samples": 2653729,
+  "fraud_samples": 5781,
+  "features": [
+    "amount",
+    "oldbalanceOrg",
+    "newbalanceOrig",
+    "oldbalanceDest",
+    "newbalanceDest",
+    "log_amount",
+    "is_transfer",
+    "is_cash_out",
+    "hour_of_day",
+    "hour_sin",
+    "hour_cos",
+    "is_night_transaction",
+    "orig_balance_error",
+    "orig_drain_ratio",
+    "is_full_liquidation",
+    "dest_balance_error",
+    "dest_drain_ratio",
+    "dest_zero_balance_anomaly"
+  ],
+  "training_time_seconds": 14.57,
+  "chosen_threshold": 0.9902,
+  "validation_metrics": {
+    "pr_auc": 0.9400117083509815,
+    "roc_auc": 0.9976482807611017,
+    "threshold": 0.9902292225058591,
+    "precision": 0.9752964426877471,
+    "recall": 0.8364406779661017,
+    "f1": 0.9005474452554745,
+    "fpr": 0.0003224932598908683,
+    "true_positives": 987,
+    "false_positives": 25,
+    "true_negatives": 77496,
+    "false_negatives": 193,
+    "total_samples": 78701,
+    "total_fraud": 1180
+  },
+  "test_metrics": {
+    "pr_auc": 0.9511584674388861,
+    "roc_auc": 0.9945811862345701,
+    "threshold": 0.9902292225058591,
+    "precision": 0.9825581395348837,
+    "recall": 0.8099041533546326,
+    "f1": 0.8879159369527145,
+    "fpr": 0.0004901026492770986,
+    "true_positives": 1014,
+    "false_positives": 18,
+    "true_negatives": 36709,
+    "false_negatives": 238,
+    "total_samples": 37979,
+    "total_fraud": 1252
+  },
+  "latency": {
+    "batch_size": 1000,
+    "batch_latency_ms": 1.051,
+    "single_sample_latency_ms": 1.182
+  }
+}

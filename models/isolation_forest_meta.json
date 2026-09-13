@@ -1,0 +1,66 @@
+{
+  "model_name": "Isolation Forest Unsupervised Anomaly Detector",
+  "training_samples": 2653729,
+  "unsupervised": true,
+  "features": [
+    "amount",
+    "oldbalanceOrg",
+    "newbalanceOrig",
+    "oldbalanceDest",
+    "newbalanceDest",
+    "log_amount",
+    "is_transfer",
+    "is_cash_out",
+    "hour_of_day",
+    "hour_sin",
+    "hour_cos",
+    "is_night_transaction",
+    "orig_balance_error",
+    "orig_drain_ratio",
+    "is_full_liquidation",
+    "dest_balance_error",
+    "dest_drain_ratio",
+    "dest_zero_balance_anomaly"
+  ],
+  "score_range": {
+    "min": 0.3394541805622139,
+    "max": 0.7949401883935433
+  },
+  "training_time_seconds": 139.65,
+  "chosen_threshold": 0.3828,
+  "validation_metrics": {
+    "pr_auc": 0.5942651776077763,
+    "roc_auc": 0.9248426834150352,
+    "threshold": 0.38278209409342595,
+    "precision": 0.6014376996805112,
+    "recall": 0.638135593220339,
+    "f1": 0.6192434210526315,
+    "fpr": 0.006436965467421731,
+    "true_positives": 753,
+    "false_positives": 499,
+    "true_negatives": 77022,
+    "false_negatives": 427,
+    "total_samples": 78701,
+    "total_fraud": 1180
+  },
+  "test_metrics": {
+    "pr_auc": 0.7329456617108949,
+    "roc_auc": 0.9163364592093064,
+    "threshold": 0.38278209409342595,
+    "precision": 0.8576122672508215,
+    "recall": 0.6253993610223643,
+    "f1": 0.7233256351039261,
+    "fpr": 0.0035396302447790453,
+    "true_positives": 783,
+    "false_positives": 130,
+    "true_negatives": 36597,
+    "false_negatives": 469,
+    "total_samples": 37979,
+    "total_fraud": 1252
+  },
+  "latency": {
+    "batch_size": 1000,
+    "batch_latency_ms": 34.055,
+    "single_sample_latency_ms": 10.4801
+  }
+}

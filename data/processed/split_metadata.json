@@ -1,0 +1,69 @@
+{
+  "dataset": "PaySim Fraud-Modeling Subspace (TRANSFER & CASH_OUT)",
+  "source_raw": "data/raw/paysim.csv",
+  "total_subspace_rows": 2770409,
+  "raw_dataset_rows": 6362620,
+  "subspace_retained_pct": 43.54195284332555,
+  "feature_count": 18,
+  "features": [
+    "amount",
+    "oldbalanceOrg",
+    "newbalanceOrig",
+    "oldbalanceDest",
+    "newbalanceDest",
+    "log_amount",
+    "is_transfer",
+    "is_cash_out",
+    "hour_of_day",
+    "hour_sin",
+    "hour_cos",
+    "is_night_transaction",
+    "orig_balance_error",
+    "orig_drain_ratio",
+    "is_full_liquidation",
+    "dest_balance_error",
+    "dest_drain_ratio",
+    "dest_zero_balance_anomaly"
+  ],
+  "raw_numerical_features": [
+    "amount",
+    "oldbalanceOrg",
+    "newbalanceOrig",
+    "oldbalanceDest",
+    "newbalanceDest"
+  ],
+  "target_column": "isFraud",
+  "splits": {
+    "train": {
+      "rows": 2653729,
+      "min_step": 1,
+      "max_step": 520,
+      "fraud_count": 5781,
+      "fraud_rate_pct": 0.21784439933391844,
+      "imbalance_ratio": 458.0432451133022,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    "validation": {
+      "rows": 78701,
+      "min_step": 521,
+      "max_step": 631,
+      "fraud_count": 1180,
+      "fraud_rate_pct": 1.4993456245791033,
+      "imbalance_ratio": 65.6957627118644,
+      "nan_count": 0,
+      "inf_count": 0
+    },
+    "test": {
+      "rows": 37979,
+      "min_step": 632,
+      "max_step": 743,
+      "fraud_count": 1252,
+      "fraud_rate_pct": 3.2965586245030147,
+      "imbalance_ratio": 29.334664536741215,
+      "nan_count": 0,
+      "inf_count": 0
+    }
+  },
+  "scaler_file": "models/feature_scaler.joblib"
+}

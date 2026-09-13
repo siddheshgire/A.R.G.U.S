@@ -1,0 +1,347 @@
+{
+  "importance": [
+    {
+      "feature": "orig_balance_error",
+      "gain": 334853.96875,
+      "weight": 109.0,
+      "cover": 235122.3125,
+      "gain_pct": 66.70884151470601
+    },
+    {
+      "feature": "newbalanceOrig",
+      "gain": 55561.12890625,
+      "weight": 121.0,
+      "cover": 118043.3203125,
+      "gain_pct": 11.068760977870841
+    },
+    {
+      "feature": "orig_drain_ratio",
+      "gain": 45214.55859375,
+      "weight": 219.0,
+      "cover": 87473.3828125,
+      "gain_pct": 9.007540912975537
+    },
+    {
+      "feature": "is_full_liquidation",
+      "gain": 27440.30859375,
+      "weight": 59.0,
+      "cover": 130148.9296875,
+      "gain_pct": 5.466595495129827
+    },
+    {
+      "feature": "oldbalanceOrg",
+      "gain": 12740.5390625,
+      "weight": 121.0,
+      "cover": 47390.45703125,
+      "gain_pct": 2.5381410419142107
+    },
+    {
+      "feature": "log_amount",
+      "gain": 8029.20263671875,
+      "weight": 65.0,
+      "cover": 31099.125,
+      "gain_pct": 1.5995593786204174
+    },
+    {
+      "feature": "amount",
+      "gain": 6093.8193359375,
+      "weight": 158.0,
+      "cover": 21813.966796875,
+      "gain_pct": 1.213996745559868
+    },
+    {
+      "feature": "dest_zero_balance_anomaly",
+      "gain": 3476.328125,
+      "weight": 34.0,
+      "cover": 157245.78125,
+      "gain_pct": 0.6925461352882355
+    },
+    {
+      "feature": "newbalanceDest",
+      "gain": 2551.891357421875,
+      "weight": 140.0,
+      "cover": 11219.8544921875,
+      "gain_pct": 0.5083819575454975
+    },
+    {
+      "feature": "dest_balance_error",
+      "gain": 1939.2723388671875,
+      "weight": 265.0,
+      "cover": 55594.16796875,
+      "gain_pct": 0.3863373983299831
+    },
+    {
+      "feature": "hour_of_day",
+      "gain": 874.0914916992188,
+      "weight": 89.0,
+      "cover": 50492.78125,
+      "gain_pct": 0.17413450707119965
+    },
+    {
+      "feature": "dest_drain_ratio",
+      "gain": 868.1259765625,
+      "weight": 197.0,
+      "cover": 61647.546875,
+      "gain_pct": 0.17294607079465052
+    },
+    {
+      "feature": "oldbalanceDest",
+      "gain": 750.712158203125,
+      "weight": 236.0,
+      "cover": 37441.61328125,
+      "gain_pct": 0.14955515854173423
+    },
+    {
+      "feature": "is_cash_out",
+      "gain": 453.6514892578125,
+      "weight": 2.0,
+      "cover": 1000.6964111328125,
+      "gain_pct": 0.09037541174374916
+    },
+    {
+      "feature": "hour_sin",
+      "gain": 318.92999267578125,
+      "weight": 49.0,
+      "cover": 86322.5,
+      "gain_pct": 0.06353650343496202
+    },
+    {
+      "feature": "is_transfer",
+      "gain": 284.1625671386719,
+      "weight": 67.0,
+      "cover": 13643.134765625,
+      "gain_pct": 0.05661021646668379
+    },
+    {
+      "feature": "is_night_transaction",
+      "gain": 268.517822265625,
+      "weight": 43.0,
+      "cover": 149732.625,
+      "gain_pct": 0.05349350618796144
+    },
+    {
+      "feature": "hour_cos",
+      "gain": 244.1904754638672,
+      "weight": 42.0,
+      "cover": 60001.453125,
+      "gain_pct": 0.04864706781863347
+    }
+  ],
+  "false_negatives": [
+    {
+      "amount": 399045.08,
+      "oldbalanceOrg": 10399045.08,
+      "newbalanceOrig": 10399045.08,
+      "oldbalanceDest": 0.0,
+      "newbalanceDest": 0.0,
+      "log_amount": 12.896832177925496,
+      "is_transfer": 1.0,
+      "is_cash_out": 0.0,
+      "hour_of_day": 22.0,
+      "hour_sin": -0.5,
+      "hour_cos": 0.8660254,
+      "is_night_transaction": 0.0,
+      "orig_balance_error": 399045.0800000001,
+      "orig_drain_ratio": 0.0383732389423165,
+      "is_full_liquidation": 0.0,
+      "dest_balance_error": 399045.08,
+      "dest_drain_ratio": 399045.08,
+      "dest_zero_balance_anomaly": 1.0,
+      "probability": 0.7654482126235962,
+      "actual_label": 1,
+      "index_in_test": 3583
+    },
+    {
+      "amount": 0.0,
+      "oldbalanceOrg": 0.0,
+      "newbalanceOrig": 0.0,
+      "oldbalanceDest": 1008609.53,
+      "newbalanceDest": 1008609.53,
+      "log_amount": 0.0,
+      "is_transfer": 0.0,
+      "is_cash_out": 1.0,
+      "hour_of_day": 10.0,
+      "hour_sin": 0.5,
+      "hour_cos": -0.8660254,
+      "is_night_transaction": 0.0,
+      "orig_balance_error": 0.0,
+      "orig_drain_ratio": 0.0,
+      "is_full_liquidation": 0.0,
+      "dest_balance_error": 0.0,
+      "dest_drain_ratio": 0.0,
+      "dest_zero_balance_anomaly": 0.0,
+      "probability": 0.9424720406532288,
+      "actual_label": 1,
+      "index_in_test": 37820
+    },
+    {
+      "amount": 0.0,
+      "oldbalanceOrg": 0.0,
+      "newbalanceOrig": 0.0,
+      "oldbalanceDest": 267522.87,
+      "newbalanceDest": 267522.87,
+      "log_amount": 0.0,
+      "is_transfer": 0.0,
+      "is_cash_out": 1.0,
+      "hour_of_day": 21.0,
+      "hour_sin": -0.70710677,
+      "hour_cos": 0.70710677,
+      "is_night_transaction": 0.0,
+      "orig_balance_error": 0.0,
+      "orig_drain_ratio": 0.0,
+      "is_full_liquidation": 0.0,
+      "dest_balance_error": 0.0,
+      "dest_drain_ratio": 0.0,
+      "dest_zero_balance_anomaly": 0.0,
+      "probability": 0.9424720406532288,
+      "actual_label": 1,
+      "index_in_test": 37944
+    }
+  ],
+  "correlations": [
+    {
+      "feature": "dest_zero_balance_anomaly",
+      "correlation_with_fraud": 0.555,
+      "mean_legit": 0.0,
+      "mean_fraud": 0.49,
+      "median_legit": 0.0,
+      "median_fraud": 0.0
+    },
+    {
+      "feature": "dest_drain_ratio",
+      "correlation_with_fraud": 0.4711,
+      "mean_legit": 655.58,
+      "mean_fraud": 261285.37,
+      "median_legit": 0.24,
+      "median_fraud": 1.48
+    },
+    {
+      "feature": "oldbalanceOrg",
+      "correlation_with_fraud": 0.3357,
+      "mean_legit": 42846.45,
+      "mean_fraud": 1595028.31,
+      "median_legit": 246.0,
+      "median_fraud": 446032.95
+    },
+    {
+      "feature": "is_night_transaction",
+      "correlation_with_fraud": 0.1956,
+      "mean_legit": 0.0,
+      "mean_fraud": 0.25,
+      "median_legit": 0.0,
+      "median_fraud": 0.0
+    },
+    {
+      "feature": "amount",
+      "correlation_with_fraud": 0.0594,
+      "mean_legit": 315732.59,
+      "mean_fraud": 1458053.93,
+      "median_legit": 171348.94,
+      "median_fraud": 448004.86
+    },
+    {
+      "feature": "dest_balance_error",
+      "correlation_with_fraud": 0.0584,
+      "mean_legit": -32209.26,
+      "mean_fraud": 722912.76,
+      "median_legit": 0.0,
+      "median_fraud": 3374.25
+    },
+    {
+      "feature": "is_full_liquidation",
+      "correlation_with_fraud": 0.0522,
+      "mean_legit": 0.42,
+      "mean_fraud": 0.98,
+      "median_legit": 0.0,
+      "median_fraud": 1.0
+    },
+    {
+      "feature": "newbalanceOrig",
+      "correlation_with_fraud": 0.0455,
+      "mean_legit": 15588.72,
+      "mean_fraud": 144125.6,
+      "median_legit": 0.0,
+      "median_fraud": 0.0
+    },
+    {
+      "feature": "hour_of_day",
+      "correlation_with_fraud": -0.0439,
+      "mean_legit": 15.29,
+      "mean_fraud": 11.52,
+      "median_legit": 16.0,
+      "median_fraud": 12.0
+    },
+    {
+      "feature": "hour_sin",
+      "correlation_with_fraud": 0.0393,
+      "mean_legit": -0.46,
+      "mean_fraud": 0.0,
+      "median_legit": -0.71,
+      "median_fraud": 0.0
+    },
+    {
+      "feature": "log_amount",
+      "correlation_with_fraud": 0.0369,
+      "mean_legit": 11.93,
+      "mean_fraud": 12.9,
+      "median_legit": 12.05,
+      "median_fraud": 13.01
+    },
+    {
+      "feature": "is_cash_out",
+      "correlation_with_fraud": -0.0366,
+      "mean_legit": 0.81,
+      "mean_fraud": 0.5,
+      "median_legit": 1.0,
+      "median_fraud": 1.0
+    },
+    {
+      "feature": "is_transfer",
+      "correlation_with_fraud": 0.0366,
+      "mean_legit": 0.19,
+      "mean_fraud": 0.5,
+      "median_legit": 0.0,
+      "median_fraud": 0.0
+    },
+    {
+      "feature": "orig_drain_ratio",
+      "correlation_with_fraud": -0.0257,
+      "mean_legit": 116839.33,
+      "mean_fraud": 1406.86,
+      "median_legit": 711.27,
+      "median_fraud": 1.0
+    },
+    {
+      "feature": "hour_cos",
+      "correlation_with_fraud": 0.0251,
+      "mean_legit": -0.35,
+      "mean_fraud": -0.02,
+      "median_legit": -0.5,
+      "median_fraud": -0.0
+    },
+    {
+      "feature": "orig_balance_error",
+      "correlation_with_fraud": -0.0148,
+      "mean_legit": 288474.86,
+      "mean_fraud": 7151.23,
+      "median_legit": 144626.76,
+      "median_fraud": 0.0
+    },
+    {
+      "feature": "oldbalanceDest",
+      "correlation_with_fraud": -0.0135,
+      "mean_legit": 1702261.98,
+      "mean_fraud": 489421.58,
+      "median_legit": 560829.85,
+      "median_fraud": 0.0
+    },
+    {
+      "feature": "newbalanceDest",
+      "correlation_with_fraud": -0.0083,
+      "mean_legit": 2050203.83,
+      "mean_fraud": 1224562.75,
+      "median_legit": 833434.41,
+      "median_fraud": 7550.03
+    }
+  ]
+}

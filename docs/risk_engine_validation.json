@@ -1,0 +1,77 @@
+{
+  "config": {
+    "xgboost_weight": 0.5,
+    "autoencoder_weight": 0.2,
+    "isolation_weight": 0.15,
+    "logistic_weight": 0.15,
+    "threshold_review": 40.0,
+    "threshold_block": 70.0
+  },
+  "validation_samples": 78701,
+  "validation_fraud": 1180,
+  "decision_distribution": {
+    "APPROVE": {
+      "total_transactions": 77473,
+      "pct_of_total": 98.44,
+      "legitimate_transactions": 77472,
+      "fraud_transactions": 1,
+      "fraud_density_pct": 0.0
+    },
+    "REVIEW": {
+      "total_transactions": 165,
+      "pct_of_total": 0.21,
+      "legitimate_transactions": 49,
+      "fraud_transactions": 116,
+      "fraud_density_pct": 70.3
+    },
+    "BLOCK": {
+      "total_transactions": 1063,
+      "pct_of_total": 1.35,
+      "legitimate_transactions": 0,
+      "fraud_transactions": 1063,
+      "fraud_density_pct": 100.0
+    }
+  },
+  "operational_metrics": {
+    "fraud_recall_pct": 99.92,
+    "block_recall_pct": 90.08,
+    "legitimate_disruption_fpr_pct": 0.0632
+  },
+  "model_comparison": [
+    {
+      "candidate": "XGBoost Alone",
+      "pr_auc": 0.9997,
+      "roc_auc": 1.0,
+      "opt_f1": 0.9996,
+      "opt_threshold": 0.9425
+    },
+    {
+      "candidate": "Logistic Regression Alone",
+      "pr_auc": 0.94,
+      "roc_auc": 0.9976,
+      "opt_f1": 0.9005,
+      "opt_threshold": 0.9902
+    },
+    {
+      "candidate": "Isolation Forest Alone",
+      "pr_auc": 0.5943,
+      "roc_auc": 0.9248,
+      "opt_f1": 0.6192,
+      "opt_threshold": 0.3828
+    },
+    {
+      "candidate": "Deep Autoencoder Alone",
+      "pr_auc": 0.7402,
+      "roc_auc": 0.944,
+      "opt_f1": 0.7698,
+      "opt_threshold": 0.9999
+    },
+    {
+      "candidate": "ARGUS Weighted Ensemble",
+      "pr_auc": 1.0,
+      "roc_auc": 1.0,
+      "opt_f1": 0.9996,
+      "opt_threshold": 0.6159
+    }
+  ]
+}

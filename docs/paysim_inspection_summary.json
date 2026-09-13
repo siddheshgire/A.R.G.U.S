@@ -1,0 +1,225 @@
+{
+  "basic": {
+    "n_rows": 6362620,
+    "n_cols": 11,
+    "mem_mb": 1007.0485391616821,
+    "schema": [
+      {
+        "column": "step",
+        "dtype": "int32",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unique": 743,
+        "unique_pct": 0.011677579361960953
+      },
+      {
+        "column": "type",
+        "dtype": "category",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unique": 5,
+        "unique_pct": 7.858397955559189e-05
+      },
+      {
+        "column": "amount",
+        "dtype": "float64",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unique": 5316900,
+        "unique_pct": 83.5646321798253
+      },
+      {
+        "column": "nameOrig",
+        "dtype": "string",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unique": 6353307,
+        "unique_pct": 99.85362947967975
+      },
+      {
+        "column": "oldbalanceOrg",
+        "dtype": "float64",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unique": 1845844,
+        "unique_pct": 29.01075343176239
+      },
+      {
+        "column": "newbalanceOrig",
+        "dtype": "float64",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unique": 2682586,
+        "unique_pct": 42.1616566760234
+      },
+      {
+        "column": "nameDest",
+        "dtype": "string",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unique": 2722362,
+        "unique_pct": 42.78680795018404
+      },
+      {
+        "column": "oldbalanceDest",
+        "dtype": "float64",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unique": 3614697,
+        "unique_pct": 56.81145502953186
+      },
+      {
+        "column": "newbalanceDest",
+        "dtype": "float64",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unique": 3555499,
+        "unique_pct": 55.88105214518547
+      },
+      {
+        "column": "isFraud",
+        "dtype": "int8",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unique": 2,
+        "unique_pct": 3.143359182223675e-05
+      },
+      {
+        "column": "isFlaggedFraud",
+        "dtype": "int8",
+        "missing": 0,
+        "missing_pct": 0.0,
+        "unique": 2,
+        "unique_pct": 3.143359182223675e-05
+      }
+    ],
+    "duplicates": 0
+  },
+  "target": {
+    "n_legit": 6354407,
+    "n_fraud": 8213,
+    "fraud_pct": 0.12908204481801522,
+    "imbalance_ratio": 773.7010836478753,
+    "n_flagged_0": 6362604,
+    "n_flagged_1": 16,
+    "cross_tab": {
+      "0": {
+        "0": 6354407,
+        "1": 8197,
+        "All": 6362604
+      },
+      "1": {
+        "0": 0,
+        "1": 16,
+        "All": 16
+      },
+      "All": {
+        "0": 6354407,
+        "1": 8213,
+        "All": 6362620
+      }
+    }
+  },
+  "transactions": {
+    "type_stats": [
+      {
+        "type": "CASH_IN",
+        "count": 1399284,
+        "pct_of_all": 21.992261049693365,
+        "fraud_count": 0,
+        "fraud_rate_pct": 0.0,
+        "amount_median": 143427.71000000002,
+        "amount_mean": 168920.2420040964,
+        "amount_max": 1915267.9
+      },
+      {
+        "type": "CASH_OUT",
+        "count": 2237500,
+        "pct_of_all": 35.16633085112736,
+        "fraud_count": 4116,
+        "fraud_rate_pct": 0.18395530726256984,
+        "amount_median": 147072.185,
+        "amount_mean": 176273.96434614077,
+        "amount_max": 10000000.0
+      },
+      {
+        "type": "DEBIT",
+        "count": 41432,
+        "pct_of_all": 0.6511782881894566,
+        "fraud_count": 0,
+        "fraud_rate_pct": 0.0,
+        "amount_median": 3048.99,
+        "amount_mean": 5483.6653137671365,
+        "amount_max": 569077.51
+      },
+      {
+        "type": "PAYMENT",
+        "count": 2151495,
+        "pct_of_all": 33.81460781879163,
+        "fraud_count": 0,
+        "fraud_rate_pct": 0.0,
+        "amount_median": 9482.19,
+        "amount_mean": 13057.60466018745,
+        "amount_max": 238637.98
+      },
+      {
+        "type": "TRANSFER",
+        "count": 532909,
+        "pct_of_all": 8.375621992198184,
+        "fraud_count": 4097,
+        "fraud_rate_pct": 0.7687991758442811,
+        "amount_median": 486308.39,
+        "amount_mean": 910647.0096454928,
+        "amount_max": 92445516.64
+      }
+    ],
+    "amt_desc": {
+      "count": 6362620.0,
+      "mean": 179861.90354913071,
+      "std": 603858.2314629357,
+      "min": 0.0,
+      "25%": 13389.57,
+      "50%": 74871.94,
+      "75%": 208721.4775,
+      "max": 92445516.64
+    },
+    "fraud_amt_desc": {
+      "count": 8213.0,
+      "mean": 1467967.2991403872,
+      "std": 2404252.947240169,
+      "min": 0.0,
+      "25%": 127091.33,
+      "50%": 441423.44,
+      "75%": 1517771.48,
+      "max": 10000000.0
+    }
+  },
+  "temporal": {
+    "min_step": 1,
+    "max_step": 743,
+    "unique_steps": 743,
+    "total_days": 30.958333333333332
+  },
+  "balance": {
+    "orig_exact_match_pct": 20.140052368363975,
+    "dest_exact_match_pct": 34.16788995728175,
+    "pct_fraud_emptied": 97.552660416413,
+    "pct_legit_emptied": 23.8034642729054,
+    "dest_both_zero_pct": 36.42024826250822,
+    "fraud_dest_both_zero_pct": 49.628637525873614
+  },
+  "entities": {
+    "unique_orig": 6353307,
+    "unique_dest": 2722362,
+    "n_merchant_dest": 2151495,
+    "fraud_merchant_dest": 0,
+    "repeat_senders": 9298
+  },
+  "figures": [
+    "docs/figures/eda_01_transaction_types.png",
+    "docs/figures/eda_02_fraud_by_type.png",
+    "docs/figures/eda_03_amount_distribution.png",
+    "docs/figures/eda_04_temporal_trend.png",
+    "docs/figures/eda_05_balance_drainage.png"
+  ]
+}

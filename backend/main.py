@@ -14,7 +14,11 @@ from backend.config import settings
 from backend.services.model_service import ModelManager
 from backend.api import api_router
 from backend.security import SecurityHeadersMiddleware, RateLimitMiddleware
-from database.connection import reset_engine
+from database.connection import reset_engine, get_engine
+from database.base import Base
+from database.models import Role, User
+from backend.security.password import hash_password
+from sqlalchemy.orm import Session
 
 logger = logging.getLogger("argus.api")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
@@ -29,7 +33,35 @@ async def lifespan(app: FastAPI):
     """
     logger.info("[*] A.R.G.U.S. API Gateway starting up...")
     logger.info(f"[*] Loading pretrained model artifacts from: {settings.resolved_models_dir}")
-    
+
+    # Initialize the schema before dependencies receive their first request.
+    # This makes the local SQLite demo self-starting while preserving explicit
+    # DATABASE_URL configuration for deployed PostgreSQL environments.
+    engine = get_engine()
+    Base.metadata.create_all(bind=engine)
+
+    # The repository includes demo credentials for local evaluation. Seed them
+    # only when the active database is SQLite and contains no users; production
+    # databases are never populated implicitly.
+    if engine.url.drivername.startswith("sqlite"):
+        with Session(engine) as session:
+            if session.query(User).count() == 0:
+                role_names = ["USER", "ANALYST", "ADMIN", "AUDITOR"]
+                roles = {}
+                for name in role_names:
+                    role = session.query(Role).filter(Role.name == name).one_or_none()
+                    if role is None:
+                        role = Role(name=name, description=f"{name} access role")
+                        session.add(role)
+                    roles[name] = role
+                session.flush()
+                session.add_all([
+                    User(username="admin", email="admin@argus.org", hashed_password=hash_password("AdminPassword123!"), role=roles["ADMIN"]),
+                    User(username="analyst", email="analyst@argus.org", hashed_password=hash_password("AnalystPassword123!"), role=roles["ANALYST"]),
+                ])
+                session.commit()
+                logger.info("[+] Seeded local demo users: admin and analyst")
+
     # Initialize and load model artifacts once
     model_manager = ModelManager(models_dir=settings.resolved_models_dir)
     try:

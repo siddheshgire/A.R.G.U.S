@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import {
@@ -9,10 +9,13 @@ import {
   Radio,
   ShieldAlert,
   Users,
+  Menu,
+  X,
 } from 'lucide-react';
 
 export function Sidebar() {
   const { user } = useAuth();
+  const [open, setOpen] = useState(false);
   const role = user?.role?.toUpperCase() || 'USER';
 
   const navItems = [
@@ -41,7 +44,7 @@ export function Sidebar() {
           name: 'Alerts Queue',
           path: '/alerts',
           icon: <AlertTriangle size={18} />,
-          roles: ['ANALYST', 'ADMIN'],
+          roles: ['ANALYST', 'ADMIN', 'AUDITOR'],
         },
       ],
     },
@@ -76,17 +79,12 @@ export function Sidebar() {
   ];
 
   return (
-    <aside
-      style={{
-        width: '240px',
-        background: 'var(--bg-sidebar)',
-        borderRight: '1px solid var(--border-subtle)',
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '1.25rem 0.75rem',
-        flexShrink: 0,
-      }}
-    >
+    <>
+      <button className="mobile-nav-toggle" onClick={() => setOpen((value) => !value)} aria-label={open ? 'Close navigation' : 'Open navigation'}>
+        {open ? <X size={20} /> : <Menu size={20} />}
+      </button>
+      {open && <button className="mobile-nav-backdrop" onClick={() => setOpen(false)} aria-label="Close navigation" />}
+      <aside className={`app-sidebar${open ? ' is-open' : ''}`}>
       <nav style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         {navItems.map((group) => {
           const visibleItems = group.items.filter((item) => item.roles.includes(role));
@@ -111,6 +109,7 @@ export function Sidebar() {
                 <NavLink
                   key={item.path}
                   to={item.path}
+                  onClick={() => setOpen(false)}
                   style={({ isActive }) => ({
                     display: 'flex',
                     alignItems: 'center',
@@ -133,6 +132,7 @@ export function Sidebar() {
           );
         })}
       </nav>
-    </aside>
+      </aside>
+    </>
   );
 }
